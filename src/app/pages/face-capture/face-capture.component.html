@@ -1,0 +1,39 @@
+
+  <div class="video-wrapper">
+    <video
+      class="video"
+      autoplay
+      playsinline
+      #videoRef
+      ></video>
+      <!-- (loadedmetadata)="handleMetadata()" -->
+    <div [ngClass]="faceState + ' oval'" [ngStyle]="ovalStyle"></div>
+  </div>
+
+
+  <!-- <div *ngIf="feedbackMessage">
+    <div class="snackbar-content">
+      {{ feedbackMessage }}
+    </div>
+  </div> -->
+  <!-- <div *ngIf="loading" class="circular-progress">
+    <mat-progress-spinner
+      [diameter]="50"
+      mode="indeterminate"
+    ></mat-progress-spinner>
+  </div> -->
+  <div >
+    <!-- <mat-alert
+      [severity]="'error'"
+      [variant]="'filled'"
+    >
+      {{ errorMessage }}
+    </mat-alert> -->
+    <button
+      (click)="startCamera()"
+      class="restart-button"
+    >
+      Restart camera
+    </button>
+  </div>
+
