@@ -1,0 +1,31 @@
+.header{
+  width: 100%;
+  height: 30px;
+  .header-infortation{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Primera columna con ancho automático, segunda columna se expande */
+    align-items: center;
+    .header-logo{
+      display: flex;
+      align-items: center;
+    }
+    .pi-arrow-left{
+      padding-left: 15px;
+      padding-bottom: 5px;
+    }
+    h2{
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+  img{
+    width: 150px;
+    padding-left: 30px;
+  }
+}
+p{
+  align-content: center;
+}
+::ng-deep .p-progressbar {
+  height: .3rem;
+}

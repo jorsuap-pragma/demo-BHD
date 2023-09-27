@@ -6,6 +6,10 @@ import { ButtonComponent } from '../atoms/button/button.component';
 import { FaceCaptureComponent } from '../pages/face-capture/face-capture.component';
 import { OnbordingComponent } from './onbording.component';
 
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { HeaderComponent } from '../particle/header/header.component';
+
+
 
 
 @NgModule({
@@ -17,7 +21,9 @@ import { OnbordingComponent } from './onbording.component';
   imports: [
     ButtonComponent,
     CommonModule,
-    OnbordingRoutes
+    OnbordingRoutes,
+    ProgressSpinnerModule,
+    HeaderComponent,
   ]
 })
 export class OnbordingModule { }

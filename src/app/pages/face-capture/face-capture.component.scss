@@ -1,0 +1,48 @@
+.oval {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid #f16063;
+  height: 75.875%;
+  top: 10.5625%;
+  width: 30.5556%;
+  left: 33.2222%;
+}
+.video-wrapper {
+  position: relative;
+  text-align: center;
+  margin: 40px auto;
+  width: 60%;
+}
+
+.video {
+  width: 100%;
+}
+
+.face-passed.oval {
+  border: 4px solid #66cb9f;
+}
+
+.face-found.oval {
+  border: 4px solid #fac109;
+}
+
+@media (max-width: 768px) {
+  .video-wrapper {
+    width: 70%;
+    margin: 3rem auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-wrapper {
+    width: 80%;
+    margin: 3rem auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .video-wrapper {
+    width: 100%;
+    margin: 3rem auto;
+  }
+}
