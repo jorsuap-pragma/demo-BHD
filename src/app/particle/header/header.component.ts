@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {ProgressBarModule} from 'primeng/progressbar';
 
 @Component({
@@ -10,7 +10,8 @@ import {ProgressBarModule} from 'primeng/progressbar';
 })
 export class HeaderComponent implements OnInit {
 
-  value: number = 20;
+  @Input() step!: string;
+  public value: number = 20;
 
   constructor() { }
 

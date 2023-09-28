@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   @Input() label!: string;
+  @Input() costumClass: string = '--blue';
 
   constructor() { }
 

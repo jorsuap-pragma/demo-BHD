@@ -1,3 +1,5 @@
+<app-header [step]="currentStep"></app-header>
+<div>
 
   <div class="video-wrapper">
     <video
@@ -19,7 +21,7 @@
 
   <img id="image" [src]="imageCaptured" />
 
-  <div *ngIf="loading">
+  <div *ngIf="loading" class="loading">
     <p-progressSpinner></p-progressSpinner>
   </div>
 
@@ -33,4 +35,5 @@
     </button>
     <button id="find-face" (click)="findFace()" [disabled]="!isFindFaceReady">Retake Photo</button>
   </div>
+</div>
 

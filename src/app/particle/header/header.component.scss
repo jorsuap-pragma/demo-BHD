@@ -3,7 +3,7 @@
   height: 30px;
   .header-infortation{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Primera columna con ancho automático, segunda columna se expande */
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     .header-logo{
       display: flex;
@@ -12,10 +12,22 @@
     .pi-arrow-left{
       padding-left: 15px;
       padding-bottom: 5px;
+      cursor: pointer;
     }
-    h2{
+    h3{
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    @media (max-width: 600px) {
+      h3{
+        font-size: 1rem;
+      }
+      img{
+        width: 100px;
+        padding-left: 20px;
+      }
     }
   }
   img{
@@ -29,3 +41,5 @@ p{
 ::ng-deep .p-progressbar {
   height: .3rem;
 }
+
+

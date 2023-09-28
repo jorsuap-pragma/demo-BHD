@@ -1,19 +1,20 @@
 .header {
   text-align: center;
-  margin: 10px 0 40px; /* Ajusta el valor según sea necesario */
+  margin:40px 0 0 0; /* Ajusta el valor según sea necesario */
   img{
-    width: 40%
+    width: 60%
   };
 }
 .content {
   display: grid;
-  grid-template-columns: 1fr; /* Por defecto, una columna para pantallas pequeñas */
-  gap: 20px; /* Espacio entre columnas */
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: center;
 }
 
 @media (min-width: 900px) {
   .content {
-    grid-template-columns: 1fr 1fr; /* Dos columnas para pantallas grandes */
+    grid-template-columns: 1fr 1fr;
   }
 }
 .welcome {
@@ -21,18 +22,22 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-
 }
 
 .welcome-information{
   width: 60%;
+  .description{
+    text-align: start;
+    margin-bottom: 40px;
+  }
 }
 
 .welcome-information,
 .image-section {
-  margin: 0 auto; /* Centra horizontalmente el contenido */
+  margin: 40px auto; /* Centra horizontalmente el contenido */
   text-align: center;
 }
+
 
 .portrait{
   width: 30%;

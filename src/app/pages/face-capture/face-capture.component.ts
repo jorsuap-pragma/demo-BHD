@@ -33,7 +33,8 @@ export class FaceCaptureComponent implements OnInit, OnDestroy {
   public videoSettings: any = {};
   public imageCaptured:string = '';
   public screenWidth!: number;
-  isMobile!: boolean;
+  public isMobile!: boolean;
+  public currentStep = 'Captura facial'
   public serverPublicKey = {
     kty: "RSA",
     "x5t#S256": "ozZ9LtuUcz1Mux8uyqIGAPTXIwG_Mw1LXnCxOBcczW0",
@@ -128,7 +129,7 @@ startFaceDetector() {
   //   }).catch((error: any) => {
   //     console.log('Error checking gyroscope', error);
   //   });
-
+  this.loading = true;
   this.faceCapture.startCamera(this.videoRef.nativeElement).then((result: any) => {
     console.log('Camera started', result);
     this.cameraStarted = true;
