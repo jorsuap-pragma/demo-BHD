@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ProgressBarModule} from 'primeng/progressbar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +12,16 @@ import {ProgressBarModule} from 'primeng/progressbar';
 export class HeaderComponent implements OnInit {
 
   @Input() step!: string;
-  public value: number = 20;
+  @Input() value!: number;
+  @Input() goToRoute!: string;
 
-  constructor() { }
+  constructor( private route : Router) { }
 
   ngOnInit(): void {
+  }
+
+  goTo(){
+    this.route.navigate([this.goToRoute]);
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { FaceCapturedService } from 'src/app/services/face-captured.service';
 
 declare const Daon: any;
 @Component({
@@ -9,7 +10,7 @@ declare const Daon: any;
 })
 export class FaceCaptureComponent implements OnInit, OnDestroy {
 
-  @ViewChild('videoRef') videoRef!: ElementRef<HTMLVideoElement>;
+  @ViewChild('videoRef', { static: false }) videoRef!: ElementRef<HTMLVideoElement>;
   configuration = {
     width: 1280,
     height: 720,
@@ -19,7 +20,7 @@ export class FaceCaptureComponent implements OnInit, OnDestroy {
   cameraResolution: string = '';
   capturedImage: any;
   feedbackMessage: string = '';
-  loading: boolean = false;
+  loading: boolean = true;
   errorMessage: string = '';
   faceState: string = '';
   isWasmLoaded: boolean = false;
@@ -47,11 +48,13 @@ export class FaceCaptureComponent implements OnInit, OnDestroy {
     n: "ozmQdLrKdETRi59xYWWK4MeQ5E6h8rKxVmCqGnpEzOr0OVLhUpHGShgobKcUD5h-lo--nJUlBLOwQIpSGg2ZF9jdnn2JYv8RaYL9amhHey09NtVN7lbR5eZBmzg0o32QRXJAEugFtdBba5LsZsv75EYOeOjYDwm1MLtrRJQ6Vp2Tq5HWhrRE9Vv73Ul2A7QWMPcOBEuVpf9qaN9WYDhiUhwIRSWC6gwJCvgQJGueCUrpuqWGFQ7kPvvGtp8hyHnR5oqqC0eAyy08H4drSDeyfXuBUPqoL2_pwtSrpKKRLvmVVwvrSnTClcnz7T5pImX6eCr8XpKRdI2i1JvLESS2wQ",
   };
 
-  public idxUserId = "QTAzM6-hKbpdcmBmsOak4pr2VQ";
+  public idxUserId = "QTAzO6qXt4JpsvO92x9SZa-lJQ";
 
 
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private faceCapturedService : FaceCapturedService ) {}
 
   ngOnInit() {
     this.screenWidth = window.innerWidth;
@@ -103,6 +106,9 @@ startFaceDetector() {
           this.faceState = 'face-passed';
           this.imageCaptured = detectorFeedbackObject.faceImage;
           this.feedbackMessage = "passed";
+          this.faceCapturedService.setFaceImg(detectorFeedbackObject.faceImage);
+          this.router.navigate(['/face-review']);
+          this.faceCapture.stopCamera();
         } else {
           this.faceState = 'face-found';
           setTimeout(() => {
@@ -129,8 +135,8 @@ startFaceDetector() {
   //   }).catch((error: any) => {
   //     console.log('Error checking gyroscope', error);
   //   });
-  this.loading = true;
   this.faceCapture.startCamera(this.videoRef.nativeElement).then((result: any) => {
+    this.loading = false;
     console.log('Camera started', result);
     this.cameraStarted = true;
     this.videoLoaded = true;

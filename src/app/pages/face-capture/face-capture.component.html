@@ -1,5 +1,9 @@
-<app-header [step]="currentStep"></app-header>
-<div>
+<app-header [value]="20" [step]="currentStep" [goToRoute]="'/'" cl></app-header>
+
+<div *ngIf="loading" class="loading">
+  <p-progressSpinner [style]="{width: '250px', height: '250px'}" strokeWidth="1" styleClass="custom-spinner" ></p-progressSpinner>
+</div>
+<div [ngClass]="{'face-capture-hide': loading}">
 
   <div class="video-wrapper">
     <video
@@ -8,32 +12,14 @@
       playsinline
       #videoRef
       ></video>
-    <div *ngIf="cameraStarted && !errorMessage" [ngClass]="faceState + ' oval'"></div>
-  </div>
-  <p style="width: 80%; overflow: scroll">{{ videoSettings | json }}</p>
-
-
-  <div *ngIf="feedbackMessage">
-    <div class="snackbar-content">
-      {{ feedbackMessage }}
+    <div *ngIf="cameraStarted && !errorMessage" [ngClass]="faceState + ' oval'">
+      <div class="snackbar-content" *ngIf="feedbackMessage">
+        <p>{{ feedbackMessage | titlecase }}</p>
+      </div>
     </div>
   </div>
 
   <img id="image" [src]="imageCaptured" />
-
-  <div *ngIf="loading" class="loading">
-    <p-progressSpinner></p-progressSpinner>
-  </div>
-
-  <div>
-    <button
-    [disabled]="isCameraReady"
-      (click)="startCamera()"
-      class="restart-button"
-    >
-      Start camera
-    </button>
-    <button id="find-face" (click)="findFace()" [disabled]="!isFindFaceReady">Retake Photo</button>
-  </div>
 </div>
+
 

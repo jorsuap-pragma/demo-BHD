@@ -1,0 +1,39 @@
+.container-img{
+  position: relative;
+  text-align: center;
+  margin: 40px auto 0;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image-preview {
+  margin: 10px auto;
+  width: 100%;
+}
+
+.container-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .btn-preview{
+    margin-top: 10px!important;
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-img, .btn-preview {
+  width: 80%;
+}
+}
+
+@media (max-width: 500px) {
+  .container-img, .btn-preview {
+  width: 95%;
+}
+}

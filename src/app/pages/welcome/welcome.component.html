@@ -8,10 +8,17 @@
       <p class="description">
         Open your account quickly and easily using the Demo Company digital onboarding flow to verify your identity. Click Apply Now to begin.
       </p>
-      <app-button class="welcome-btn" routerLink="face-capture" [label]="'Apply now'"></app-button>
+      <app-button class="welcome-btn" routerLink="face-capture" [label]="'Apply now'" [costumClass]="'--blue'"></app-button>
     </section>
     <section class="image-section">
       <img class="portrait" src="/assets/portrait.png" alt="">
     </section>
   </div>
 </div>
+
+<h1 *ngIf="true; then userBlock; else lala">si salgo</h1>
+<ng-template #userBlock><div>holi</div></ng-template>
+<ng-template #lala>No salgo</ng-template>
+
+
+

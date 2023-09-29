@@ -8,6 +8,9 @@ import { OnbordingComponent } from './onbording.component';
 
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { HeaderComponent } from '../particle/header/header.component';
+import { FaceReviewComponent } from '../pages/face-review/face-review.component';
+import { RouterModule } from '@angular/router';
+import { RegisterFaceUserService } from '../services/registerFaceUser/register-face-user.service';
 
 
 
@@ -17,6 +20,7 @@ import { HeaderComponent } from '../particle/header/header.component';
     OnbordingComponent,
     WelcomeComponent,
     FaceCaptureComponent,
+    FaceReviewComponent
   ],
   imports: [
     ButtonComponent,
@@ -24,6 +28,11 @@ import { HeaderComponent } from '../particle/header/header.component';
     OnbordingRoutes,
     ProgressSpinnerModule,
     HeaderComponent,
-  ]
+    RouterModule,
+
+  ],
+  providers: [
+    RegisterFaceUserService
+  ],
 })
 export class OnbordingModule { }

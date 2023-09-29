@@ -1,0 +1,10 @@
+<app-header  [value]="40" [step]="currentStep" [goToRoute]="'face-capture'"></app-header>
+<div *ngIf="imageCaptured">
+  <div class="container-img">
+    <img id="image" class="image-preview" alt="Selfie preview" [src]="imageCaptured" />
+  </div>
+  <div class="container-btn">
+    <app-button (click)="findFace()" class="btn-preview" routerLink="face-capture" [label]="'Retake Photo'" [costumClass]="'--yellow'"></app-button>
+    <app-button (click)="sedImgFace()" class="btn-preview" [label]="'Esta foto està bien'" [costumClass]="'--blue'"></app-button>
+  </div>
+</div>
