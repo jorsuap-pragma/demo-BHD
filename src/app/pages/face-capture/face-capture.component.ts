@@ -61,13 +61,16 @@ export class FaceCaptureComponent implements OnInit, OnDestroy {
     this.faceCapture = new Daon.FaceCapture(this.configuration);
     this.loadDFQModule();
     this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    console.log('-------------------------',this.isMobile);
+    console.log('------',this.isMobile);
 
   }
 
   loadDFQModule = () => {
+    console.log('--------------------------', window.location.origin + "assets/public/DaonFaceQuality.wasm");
+    
     this.faceCapture.loadDFQModule({
-      urlFaceDetectorWasm: window.location.origin + "assets/public/DaonFaceQuality.wasm",
+      //urlFaceDetectorWasm: window.location.origin + "assets/public/DaonFaceQuality.wasm",
+      urlFaceDetectorWasm: "assets/public/DaonFaceQuality.wasm",
       onFaceModuleLoaded: ({ isLoaded, error }: { isLoaded: boolean, error?: any }) => {
         if ( isLoaded ) {
           this.startCamera();
