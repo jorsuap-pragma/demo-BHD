@@ -67,7 +67,7 @@ export class FaceCaptureComponent implements OnInit, OnDestroy {
 
   loadDFQModule = () => {
     this.faceCapture.loadDFQModule({
-      urlFaceDetectorWasm: window.location.origin + "/assets/public/DaonFaceQuality.wasm",
+      urlFaceDetectorWasm: window.location.origin + "assets/public/DaonFaceQuality.wasm",
       onFaceModuleLoaded: ({ isLoaded, error }: { isLoaded: boolean, error?: any }) => {
         if ( isLoaded ) {
           this.startCamera();
