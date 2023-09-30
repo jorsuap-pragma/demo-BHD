@@ -66,11 +66,11 @@ export class FaceCaptureComponent implements OnInit, OnDestroy {
   }
 
   loadDFQModule = () => {
-    console.log('--------------------------', "test pasth");
+    console.log('--------------------------', "test pasth 2");
     
     this.faceCapture.loadDFQModule({
-      urlFaceDetectorWasm: window.location.origin + "/assets/public/DaonFaceQuality.wasm",
-      //urlFaceDetectorWasm: "assets/public/DaonFaceQuality.wasm",
+     // urlFaceDetectorWasm: window.location.origin + "/assets/public/DaonFaceQuality.wasm",
+      urlFaceDetectorWasm: "assets/public/DaonFaceQuality.wasm",
       onFaceModuleLoaded: ({ isLoaded, error }: { isLoaded: boolean, error?: any }) => {
         if ( isLoaded ) {
           this.startCamera();
