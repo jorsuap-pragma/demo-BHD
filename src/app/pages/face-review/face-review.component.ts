@@ -33,7 +33,9 @@ export class FaceReviewComponent implements OnInit {
   }
 
   sedImgFace(){
-    this.registerFaceUserService.setImgUser(this.imageCaptured.split(',')[1], 'postman-test-1131');
+    this.registerFaceUserService.sendImgUser(this.imageCaptured.split(',')[1], 'postman-test-1131')
+    .subscribe( value => { console.log("'--------------------'", value);
+    });
   }
 
 

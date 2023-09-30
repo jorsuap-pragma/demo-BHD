@@ -11,6 +11,7 @@ import { HeaderComponent } from '../particle/header/header.component';
 import { FaceReviewComponent } from '../pages/face-review/face-review.component';
 import { RouterModule } from '@angular/router';
 import { RegisterFaceUserService } from '../services/registerFaceUser/register-face-user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -29,10 +30,11 @@ import { RegisterFaceUserService } from '../services/registerFaceUser/register-f
     ProgressSpinnerModule,
     HeaderComponent,
     RouterModule,
+    HttpClientModule
 
   ],
   providers: [
-    RegisterFaceUserService
+    
   ],
 })
 export class OnbordingModule { }

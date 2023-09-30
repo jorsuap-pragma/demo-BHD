@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterFaceUserService } from './services/registerFaceUser/register-face-user.service';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RegisterFaceUserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

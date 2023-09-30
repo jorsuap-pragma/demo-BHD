@@ -66,7 +66,6 @@ export class FaceCaptureComponent implements OnInit, OnDestroy {
   }
 
   loadDFQModule = () => {
-    console.log('--------------------------', "https://jorsuap-pragma.github.io/demo-BHD/" + "/assets/public/DaonFaceQuality.wasm",);
     
     this.faceCapture.loadDFQModule({
       //urlFaceDetectorWasm: window.location.origin + "/assets/public/DaonFaceQuality.wasm",
