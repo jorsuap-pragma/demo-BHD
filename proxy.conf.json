@@ -1,7 +1,7 @@
 {
     "/bhd-test/*": {
       "target": "https://api.identityx-cloud.com",
-      "secure": false,
+      "secure": true,
       "changeOrigin": true
     }
   }
