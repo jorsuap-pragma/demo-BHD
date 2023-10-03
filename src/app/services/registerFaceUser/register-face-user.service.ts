@@ -12,9 +12,6 @@ constructor( private http: HttpClient ) { }
 
   sendImgUser(img: string, userId:string){
 
-    //console.log("----------------------", img);
-    
-
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json',
