@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-
+  authorization : "Basic am9yZGRpLnN1YXJlekBwcmFnbWEuY29tLmNvOkRNYjM3eGhHSHIzTTVoSA=="
 };
 
 /*
