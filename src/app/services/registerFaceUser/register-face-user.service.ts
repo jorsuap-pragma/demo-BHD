@@ -17,7 +17,8 @@ constructor( private http: HttpClient ) { }
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      'Authorization': "Basic am9yZGRpLnN1YXJlekBwcmFnbWEuY29tLmNvOkRNYjM3eGhHSHIzTTVoSA==",
     });
 
     const data = {
@@ -26,7 +27,7 @@ constructor( private http: HttpClient ) { }
       "format": "JPG"
     };
 
-    return this.http.post(`https://api.identityx-cloud.com/bhd-test/IdentityXServices/rest/v1/users/QTAzO6qXt4JpsvO92x9SZa-lJQ/face/samples`, data, { headers: headers })
+    return this.http.post(`/bhd-test/IdentityXServices/rest/v1/users/QTAzO6qXt4JpsvO92x9SZa-lJQ/face/samples`, data, { headers: headers })
    
   }
 }
