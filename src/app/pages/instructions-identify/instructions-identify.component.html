@@ -1,0 +1,27 @@
+<app-header  [value]="0" [step]="currentStep" [goToRoute]="'/'"></app-header>
+<div class="container">
+  <div class="instructions">
+    <h2 class="title title-instruction">Verifique su Identidad</h2>
+    <p class="description">
+      Siga los pasos que se muestran a continuacion para completar el proceso de verificacion.
+    </p>
+  </div>
+  <div class="steper">
+    <p-timeline [value]="events" align="left" styleClass="customized-timeline" >
+      <ng-template pTemplate="marker" let-event>
+        <span class="custom-marker p-shadow-2" [style.backgroundColor]="event.color">
+                  <i [ngClass]="event.icon"></i>
+              </span>
+      </ng-template>
+      <ng-template pTemplate="content" let-event>
+        <h3>{{event.step}}</h3>
+        <p class="content-describe">{{event.describe}}</p>
+      </ng-template>
+    </p-timeline>
+  </div>
+  <div class="welcome-btn">
+    <app-button  routerLink="/register-user" [label]="'Comenzar'" [costumClass]="'--blue'"></app-button>
+  </div>
+
+
+</div>

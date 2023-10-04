@@ -1,4 +1,4 @@
-<app-header [value]="20" [step]="currentStep" [goToRoute]="'/'" cl></app-header>
+<app-header [value]="20" [step]="currentStep" [goToRoute]="'/instructions'" cl></app-header>
 
 <div *ngIf="loading" class="loading">
   <p-progressSpinner [style]="{width: '250px', height: '250px'}" strokeWidth="1" styleClass="custom-spinner" ></p-progressSpinner>
@@ -20,7 +20,7 @@
   </div>
 
   <img id="image" [src]="imageCaptured" />
-  
+
 </div>
 
 

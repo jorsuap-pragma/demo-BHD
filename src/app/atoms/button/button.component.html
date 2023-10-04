@@ -1,1 +1,5 @@
-<button class="btnCustom" [class]="'btnCustom'+costumClass" >{{label}}</button>
+<!-- <button class="btnCustom" [class]="'btnCustom'+costumClass" costumClass>{{label}}</button> -->
+<button class="btnCustom" [ngClass]="['btnCustom'+costumClass, addClass]">{{label}}</button>
+
+
+

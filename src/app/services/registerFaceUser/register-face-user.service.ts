@@ -18,10 +18,22 @@ headers = new HttpHeaders({
 });
 
 registerUser(id:string){
-  
+
+  const body = {
+    "userId": id
+  }
+  console.log(id);
+
+
+  return this.http.post(`/bhd-test/IdentityXServices/rest/v1/users`, body, { headers: this.headers })
+  .pipe(
+    tap( (value)=>{
+      console.log('XXXXXXX_X_X__X_X_X__X_X_X__X_X_X',value);
+    })
+  )
 }
-sendImgUser(img: string, userId:string = 'QTAzO6qXt4JpsvO92x9SZa-lJQ'){
-  
+sendImgUser(img: string, userId:string){
+
   const data = {
     "data": img,
     "type": "Face",

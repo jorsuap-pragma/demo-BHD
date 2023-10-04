@@ -1,0 +1,22 @@
+<app-header  [value]="20" [step]="currentStep" [goToRoute]="'/'"></app-header>
+<div class="container">
+  <div class="instructions">
+    <h2 class="title title-instruction">Verifique su Identidad</h2>
+    <div class="check-agree">
+      <p-checkbox name="groupname" value="true" [(ngModel)]="selectedValues"></p-checkbox>
+      <p> Doy el concentimiento expreso para el tratamiento de mis datos biométricos con fines de autenticacion
+          por esta aplicacion.
+      </p>
+    </div>
+    <div class="iduser">
+      <label for="id">Ingrese su numero de cedula</label>
+      <p-inputNumber [(ngModel)]="idNumber" #id placeholder="cedula" mode="decimal"></p-inputNumber>
+    </div>
+  </div>
+  <div class="continer-btn">
+    <app-button  (click)="registerUser()" [label]="'Aceptar y continuar'" [costumClass]="'--green'"></app-button>
+  </div>
+  <div class="continer-two">
+    <app-button  routerLink="/register-user" [label]="'Aceptar y continuar'" [costumClass]="'--green'"></app-button>
+  </div>
+</div>
